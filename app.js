@@ -16,6 +16,14 @@ function copyExampleCode (){
         var snippetElement = sectionElement.getElementsByClassName("example-code")[0];
         if(!snippetElement)
             return;
-        snippetElement.value = example.innerHTML;
+        snippetElement.value = cleanCode(example.innerHTML);
+    }
+
+    function cleanCode(code){
+        code = code.substring(1);
+        var numberOfSpaces = code.indexOf('<');
+        var extraIndent = ' '.repeat(numberOfSpaces);
+        code = code.replaceAll(extraIndent, "");
+        return code;
     }
 }
