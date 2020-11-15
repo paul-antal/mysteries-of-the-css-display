@@ -1,0 +1,59 @@
+body {
+    padding: 20px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr 200px;
+    grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    margin: 10px;
+    grid-area: nav;
+    border: mediumpurple 3px dashed;
+    align-self: start;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+nav a:hover {
+    background-color: mediumpurple;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    margin: 10px;
+    padding: 10px 30px;
+    grid-area: main;
+    border: mediumpurple 3px dashed;
+}
+
+.code {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.tag::before {
+    content: "<";
+}
+.tag::after {
+    content: ">";
+}
