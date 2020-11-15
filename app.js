@@ -17,6 +17,7 @@ function copyExampleCode (){
         if(!snippetElement)
             return;
         snippetElement.value = cleanCode(example.innerHTML);
+        snippetElement.style.height = (10 + snippetElement.scrollHeight) + "px"
     }
 
     function cleanCode(code){
