@@ -16,6 +16,14 @@ h1 {
     text-align: center;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
 header {
     grid-area: header;
 }
@@ -42,9 +50,36 @@ aside {
 
 main {
     margin: 10px;
-    padding: 10px 30px;
+    padding: 10px;
     grid-area: main;
     border: mediumpurple 3px dashed;
+}
+
+article {
+    background-color: rgb(231, 222, 248);
+    padding: 15px;
+    margin: 5px;
+}
+
+section {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+label.section-toggle-label{
+    font-size: 0.75rem;
+    color: mediumpurple;
+    cursor: pointer;
+    user-select: none;
+}
+
+input.section-toggle{
+    display: none;
+}
+
+input.section-toggle:not(:checked) + .toggleable-section{
+    display: none;
 }
 
 .code {
@@ -56,4 +91,62 @@ main {
 }
 .tag::after {
     content: ">";
+}
+
+span.tooltip{
+    color: mediumpurple;
+    margin:5px;
+    cursor: help;
+}
+
+.resizable {
+    resize: both;
+    overflow: auto;
+}
+
+.example-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "code example";
+}
+
+.example-section h5 {
+    grid-area: title;
+}
+
+.example-section .example {
+    grid-area: example;
+}
+
+.example-section .example-code {
+    grid-area: code;
+}
+
+.example, .example-code {
+    border: 2px solid mediumpurple;
+    padding: 10px;
+    margin: 10px;
+}
+
+.example-element {
+    color: mediumpurple;
+    font-weight: bolder;
+    background-color: rgba(231, 222, 248, 0.5);
+    padding:10px;
+    cursor: default;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;;
 }

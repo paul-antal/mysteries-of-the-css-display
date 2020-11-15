@@ -1,29 +1,83 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1 class="code tag">display-outside</h1>
-        </header>
-        <main>
-            <article>
-                <h2 class="code">display: inline</h2>
-            </article>
-        </main>
-        <nav>
-            <a class="code tag" href="display-outside.html">display-outside</a>
-            <a class="code tag" >display-inside</a>
-            <a class="code tag" >display-list-item</a>
-            <a class="code tag" >display-box</a>
-            <a class="code tag" >display-internal</a>
-            <a class="code tag" >display-legacy</a>
-        </nav>
-        <aside>
 
-        </aside>
-        <footer>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
 
-        </footer>
-    </body>
+<body>
+    <header>
+        <h1 class="code tag">display-outside</h1>
+    </header>
+    <main>
+        <article>
+            <h2 class="code">display: inline</h2>
+            <label for="display-inline-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="display-inline-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">inline</span> value makes the box behave like a word in the sentence.
+                        This means the block flows in the direction the language does and wraps to the next row if the
+                        space
+                        requires it to.
+                        Margins and paddings only work on the text flow's direction.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <p>
+                            Here is an example 
+                            <span class="example-element inline">inline element</span> 
+                            in a normal paragraph
+                        </p>
+                    </div>
+                    <textarea class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 class="code">display: block</h2>
+            <label for="display-block-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="display-block-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">block</span> value makes the box behave like a paragraph
+                        This means the block flows perpendicular to the flow of the text filling in an entire line.
+                        Margins and paddings only work on both direction.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <p>
+                            Here is an example 
+                            <span class="example-element block">block element</span>
+                            in a normal paragraph
+                        </p>
+                    </div>
+                    <textarea class="example-code">
+                    </textarea>
+                </section>
+            </div>
+        </article>
+    </main>
+    <nav>
+        <a class="code tag" href="display-outside.html">display-outside</a>
+        <a class="code tag">display-inside</a>
+        <a class="code tag">display-list-item</a>
+        <a class="code tag">display-box</a>
+        <a class="code tag">display-internal</a>
+        <a class="code tag">display-legacy</a>
+    </nav>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+
 </html>
