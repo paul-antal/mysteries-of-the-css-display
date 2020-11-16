@@ -23,6 +23,9 @@ function copyExampleCode (){
     function cleanCode(code){
         code = code.substring(1);
         var numberOfSpaces = code.indexOf('<');
+        if(numberOfSpaces <= 0){
+            return code;
+        }
         var extraIndent = ' '.repeat(numberOfSpaces);
         code = code.replaceAll(extraIndent, "");
         return code;

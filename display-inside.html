@@ -11,25 +11,191 @@
     </header>
     <main>
         <article>
-            <h2 class="code">flow</h2>
+            The <span class="code tag">display-inside</span> value dictates the layout of the direct child elements.
+        </article>
+        <article>
+            <h2 id="flow" class="code">flow</h2>
             <label for="flow-section-toggle" class="section-toggle-label">Toggle section</label>
             <input id="flow-section-toggle" class="section-toggle" type="checkbox" checked>
             <div class="toggleable-section">
                 <section>
                     <p>
-                        
+                        The <span class="code tag">flow</span> layout represents the default layout.
+                        It places inline elements in the writing direction of the used language, and block elements
+                        perpendicular to it.
                     </p>
                 </section>
                 <section class="example-section">
                     <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
                     <div class="resizable example">
+                        <div style="margin-top: 40px; background-color: thistle;">
+                            <p style="margin-top: 40px;">
+                                <span class="example-element">Multiple</span>
+                                <span class="example-element">inline</span>
+                                <span class="example-element">elements</span>
+                            </p>
+                            <p class="example-element">Block element</p>
+                            <span class="example-element">Another inline element</span>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 id="flow-root" class="code">flow-root</h2>
+            <label for="flow-root-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="flow-root-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">flow-root</span> layout behaves like the flow layout, but also
+                        creates a new <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context#:~:text=A%20block%20formatting%20context%20is,document%20(%20).">block
+                            formatting context</a> (exemplified here by the non collapsing margins).
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: flow-root; margin-top: 40px; background-color: thistle;">
+                            <p style="margin-top:40px;">
+                                <span class="example-element">Multiple</span>
+                                <span class="example-element">inline</span>
+                                <span class="example-element">elements</span>
+                            </p>
+                            <p class="example-element">Block element</p>
+                            <span class="example-element">Another inline element</span>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 class="code">table</h2>
+            <label for="table-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="table-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">table</span> layout is a composite layout that works exactly as the
+                        table elements do.
+                        For it to work it needs multiple other html elements with a specific display type to correspond
+                        to the different table elements.
+                    </p>
+                    <p>
+                        Here is a list of table display types and their corresponding element:
+                    </p>
+                    <ul>
+                        <li><span class="code">table-row</span> - <span class="code tag">tr</span></li>
+                        <li><span class="code">table-row-group</span> - <span class="code tag">tbody</span></li>
+                        <li><span class="code">table-header-group</span> - <span class="code tag">thead</span></li>
+                        <li><span class="code">table-footer-group</span> - <span class="code tag">tfoot</span></li>
+                        <li><span class="code">table-column</span> - <span class="code tag">col</span></li>
+                        <li><span class="code">table-column-group</span> - <span class="code tag">colgroup</span></li>
+                        <li><span class="code">table-cell</span> - <span class="code tag">td</span></li>
+                        <li><span class="code">table-caption</span> - <span class="code tag">caption</span></li>
+                    </ul>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: table;">
+                            <div style="display: table-column-group;">
+                                <div style="display: table-column;" class="example-element"></div>
+                            </div>
+                            <div style="display: table-header-group;">
+                                <div style="display: table-row;">
+                                    <div style="display: table-cell;">
+                                        Header table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Header table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Header table cell
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: table-row-group;">
+                                <div style="display: table-row;">
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                </div>
+                                <div style="display: table-row;">
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: table-footer-group">
+                                <div style="display: table-row;">
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                    <div style="display: table-cell;">
+                                        Table cell
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: table-caption;">
+                                Table caption
+                            </div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 id="ruby" class="code">ruby</h2>
+            <label for="ruby-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="ruby-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">ruby</span> layout behaves like the flow layout, but also
+                        creates a new <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context#:~:text=A%20block%20formatting%20context%20is,document%20(%20).">block
+                            formatting context</a> (exemplified here by the non collapsing margins).
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: flow-root; margin-top: 40px; background-color: thistle;">
+                            <p style="margin-top:40px;">
+                                <span class="example-element">Multiple</span>
+                                <span class="example-element">inline</span>
+                                <span class="example-element">elements</span>
+                            </p>
+                            <p class="example-element">Block element</p>
+                            <span class="example-element">Another inline element</span>
+                        </div>
                     </div>
                     <textarea readonly class="example-code"></textarea>
                 </section>
             </div>
         </article>
     </main>
-    <nav>
+    <nav style="position: sticky;">
         <a class="code tag" href="display-outside.html">display-outside</a>
         <a class="code tag" href="display-inside.html">display-inside</a>
         <a class="code tag" href="display-list-item.html">display-list-item</a>

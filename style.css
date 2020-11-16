@@ -138,15 +138,3 @@ span.tooltip{
     padding:10px;
     cursor: default;
 }
-
-.inline {
-    display: inline;
-}
-
-.block {
-    display: block;
-}
-
-.inline-block {
-    display: inline-block;;
-}
