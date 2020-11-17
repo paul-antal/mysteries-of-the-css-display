@@ -14,7 +14,7 @@
             The <span class="code tag">display-inside</span> value dictates the layout of the direct child elements.
         </article>
         <article>
-            <h2 id="flow" class="code">flow</h2>
+            <h2 id="flow" class="code"><span class="code">flow</span> (experimental)</h2>
             <label for="flow-section-toggle" class="section-toggle-label">Toggle section</label>
             <input id="flow-section-toggle" class="section-toggle" type="checkbox" checked>
             <div class="toggleable-section">
@@ -28,7 +28,7 @@
                 <section class="example-section">
                     <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
                     <div class="resizable example">
-                        <div style="margin-top: 40px; background-color: thistle;">
+                        <div style="display: flow; margin-top: 40px; background-color: thistle;">
                             <p style="margin-top: 40px;">
                                 <span class="example-element">Multiple</span>
                                 <span class="example-element">inline</span>
@@ -81,13 +81,14 @@
                     <p>
                         The <span class="code tag">table</span> layout is a composite layout that works exactly as the
                         table elements do.
-                        For it to work it needs multiple other html elements with a specific display type to correspond
+                        To use it you need multiple other html elements with a specific display type to correspond
                         to the different table elements.
                     </p>
                     <p>
                         Here is a list of table display types and their corresponding element:
                     </p>
                     <ul>
+                        <li><span class="code">table</span> - <span class="code tag">table</span></li>
                         <li><span class="code">table-row</span> - <span class="code tag">tr</span></li>
                         <li><span class="code">table-row-group</span> - <span class="code tag">tbody</span></li>
                         <li><span class="code">table-header-group</span> - <span class="code tag">thead</span></li>
@@ -165,29 +166,115 @@
             </div>
         </article>
         <article>
-            <h2 id="ruby" class="code">ruby</h2>
-            <label for="ruby-section-toggle" class="section-toggle-label">Toggle section</label>
-            <input id="ruby-section-toggle" class="section-toggle" type="checkbox" checked>
+            <h2 id="flex" class="code">flex</h2>
+            <label for="flex-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="flex-section-toggle" class="section-toggle" type="checkbox" checked>
             <div class="toggleable-section">
                 <section>
                     <p>
-                        The <span class="code tag">ruby</span> layout behaves like the flow layout, but also
-                        creates a new <a
-                            href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context#:~:text=A%20block%20formatting%20context%20is,document%20(%20).">block
-                            formatting context</a> (exemplified here by the non collapsing margins).
+                        The <span class="code tag">flex</span> layout is a unidirectional layout that provides tools
+                        for distributing space and aligning content.
+
+                    </p>
+                    <p>
+                        The flex layout can be laid out in any direction (up, down, left or right).
+                        It allows you to specify the order of elements from css, control the way elements are aligned
+                        and how much they grow/shrink when the viewport shrinks.
+                    </p>
+                    <p>
+                        For an easy reference of all the properties you can use in flex, I recommend <a
+                            href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">this</a> guide.
                     </p>
                 </section>
                 <section class="example-section">
                     <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
                     <div class="resizable example">
-                        <div style="display: flow-root; margin-top: 40px; background-color: thistle;">
-                            <p style="margin-top:40px;">
-                                <span class="example-element">Multiple</span>
-                                <span class="example-element">inline</span>
-                                <span class="example-element">elements</span>
-                            </p>
-                            <p class="example-element">Block element</p>
-                            <span class="example-element">Another inline element</span>
+                        <div style="display: flex;">
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 id="grid" class="code">grid</h2>
+            <label for="grid-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="grid-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">grid</span> layout is a bidirectional layout, simillar to the table layout.
+                    </p>
+                    <p>
+                        The grid layout allows you to define columns, rows and gutters.
+                        It also defines how much space columns will fill, both horizontally and vertically.
+                    </p>
+                    <p>
+                        For an easy reference of all the properties you can use in grid, I recommend <a
+                            href="https://css-tricks.com/snippets/css/complete-guide-grid/">this</a> guide.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                            <div>A div</div>
+                            <div style="grid-column: 1 / span 2;" class="example-element">
+                                A div that spans two columns
+                            </div>
+                            <div style="grid-row: 4 / span 3;" class="example-element">
+                                A div that spans three rows
+                            </div>
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                            <div>A div</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 id="ruby"><span class="code">ruby</span> (experimental)</h2>
+            <label for="ruby-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="ruby-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The <span class="code tag">ruby</span> layout is a composite layout that behaves exactly like
+                        the ruby html element.
+                        To use it you need multiple child elements with specific display values, just like the table
+                        layout, each value linked to the ruby html elements.
+                    </p>
+                    <p>
+                        Here is a list of ruby display types and their corresponding element:
+                    </p>
+                    <ul>
+                        <li><span class="code">ruby</span> - <span class="code tag">ruby</span></li>
+                        <li><span class="code">ruby-base</span> - <span class="code tag">rb</span></li>
+                        <li><span class="code">ruby-text</span> - <span class="code tag">rt</span></li>
+                        <li><span class="code">ruby-base-container</span> - <span class="code tag">rbc</span></li>
+                        <li><span class="code">ruby-text-container</span> - <span class="code tag">rtc</span></li>
+                    </ul>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: ruby; ruby-position: under;">
+                            <span style="display: ruby-base-container;">
+                                <span style="display: ruby-base;">Ruby base</span>
+                                <span style="display: ruby-base;">Ruby base</span>
+                            </span>
+                            <span style="display: ruby-text-container;">
+                                <span style="display: ruby-text; ruby-position: over;">Ruby text</span>
+                            </span>
                         </div>
                     </div>
                     <textarea readonly class="example-code"></textarea>
