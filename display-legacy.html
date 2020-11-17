@@ -1,0 +1,232 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="code tag">display-legacy</h1>
+    </header>
+    <main>
+        <article>
+            <h2 class="code">display-legacy</h2>
+            <label for="section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        In the documentation, display-legacy reffers to the display properties that cannot be reproduced
+                        using a single keyword as in CSS2.
+
+                        They are :
+                    <ul>
+                        <li class="code tag">
+                            inline-block
+                        </li>
+                        <li class="code tag">
+                            inline-table
+                        </li>
+                        <li class="code tag">
+                            inline-flex
+                        </li>
+                        <li class="code tag">
+                            inline-grid
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2>
+                Short/long values
+            </h2>
+            <p>
+                CSS 3 introduces display values using multiple keywords.
+                Here is a table that summarizes all the possible values of the display property and their effect (sneakily stolen straight from the CSS module)
+            </p>
+            <table class="table" id="display-value-summary">
+                <thead>
+                    <tr>
+                        <th>Short display
+                        </th>
+                        <th>Full display
+                        </th>
+                        <th>Generated box
+                        </th>
+                    </tr>
+                </thead>
+                <tbody title="Box Suppression Display Types">
+                    <tr>
+                        <td>none
+                        </td>
+                        <td>—
+                        </td>
+                        <td>subtree omitted from box tree
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>contents
+                        </td>
+                        <td>—
+                        </td>
+                        <td>element replaced by contents in box tree
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody title="Flow Layout Display Types">
+                    <tr>
+                        <td>block
+                        </td>
+                        <td><span class="css">block flow</span>
+                        </td>
+                        <td>block box
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flow-root
+                        </td>
+                        <td><span class="css">block flow-root</span>
+                        </td>
+                        <td>block-level block container that establishes a new block formatting context (BFC)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>inline
+                        </td>
+                        <td><span class="css">inline flow</span>
+                        </td>
+                        <td>inline box <abbr title="also known as">aka</abbr> <dfn class="dfn-paneled"
+                                data-dfn-type="dfn" data-export="" id="inline-block">inline block</dfn>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>inline-block
+                        </td>
+                        <td><span class="css">inline flow-root</span>
+                        </td>
+                        <td>block container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>run-in
+                        </td>
+                        <td><span class="css">run-in flow</span>
+                        </td>
+                        <td>inline box with special box-tree-munging rules)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>list-item
+                        </td>
+                        <td><span class="css">block flow list-item</span>
+                        </td>
+                        <td>marker box
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="css">inline list-item</span>
+                        </td>
+                        <td><span class="css">inline flow list-item</span>
+                        </td>
+                        <td>marker box
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody title="Formatting Context Root Display Types">
+                    <tr>
+                        <td>flex
+                        </td>
+                        <td><span class="css">block flex</span>
+                        </td>
+                        <td>flex container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>inline-flex
+                        </td>
+                        <td><span class="css">inline flex</span>
+                        </td>
+                        <td>flex container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>grid
+                        </td>
+                        <td><span class="css">block grid</span>
+                        </td>
+                        <td>grid container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>inline-grid
+                        </td>
+                        <td><span class="css">inline grid</span>
+                        </td>
+                        <td>grid container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ruby
+                        </td>
+                        <td><span class="css">inline ruby</span>
+                        </td>
+                        <td>ruby container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="css">block ruby</span>
+                        </td>
+                        <td><span class="css">block ruby</span>
+                        </td>
+                        <td>ruby container
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>table
+                        </td>
+                        <td><span class="css">block table</span>
+                        </td>
+                        <td>table grid box
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>inline-table
+                        </td>
+                        <td><span class="css">inline table</span>
+                        </td>
+                        <td>table grid box
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody title="Layout-internal display types">
+                    <tr>
+                        <td>&lt;display-internal&gt; types
+                        </td>
+                        <td>—
+                        </td>
+                        <td>layout-specific internal box
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+    <nav>
+        <a class="code tag" href="display-outside.html">display-outside</a>
+        <a class="code tag" href="display-inside.html">display-inside</a>
+        <a class="code tag" href="display-listitem.html">display-listitem</a>
+        <a class="code tag" href="display-box.html">display-box</a>
+        <a class="code tag" href="display-legacy.html">display-legacy</a>
+    </nav>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

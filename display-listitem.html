@@ -7,22 +7,31 @@
 
 <body>
     <header>
-        <h1 class="code tag">TITLE</h1>
+        <h1 class="code tag">display-listitem</h1>
     </header>
     <main>
         <article>
-            <h2 class="code">ARTICLE TITLE</h2>
+            The <span class="code tag">display-listitem</span> property mentions whether an aditional box needs to be
+            created for the list marker.
+            Currently there is only one value for it.
+        </article>
+        <article>
+            <h2 class="code">list-item</h2>
             <label for="section-toggle" class="section-toggle-label">Toggle section</label>
             <input id="section-toggle" class="section-toggle" type="checkbox" checked>
             <div class="toggleable-section">
                 <section>
                     <p>
-                        
+                        This option generates an aditional marker box that can be stylized from CSS
                     </p>
                 </section>
                 <section class="example-section">
                     <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
                     <div class="resizable example">
+                        <div style="list-style: square; padding-left: 40px;">
+                            <div style="display: inline flow list-item; display: list-item;">A list item
+                            </div>
+                        </div>
                     </div>
                     <textarea readonly class="example-code"></textarea>
                 </section>

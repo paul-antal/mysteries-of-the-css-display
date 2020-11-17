@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="code tag">display-box</h1>
+    </header>
+    <main>
+        <article>
+            The <span class="code tag">display-box</span> property mentions whether the current element and it's
+            children generate a box.
+        </article>
+        <article>
+            <h2 id="none" class="code">none</h2>
+            <label for="none-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="none-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        This option makes it so that neither the element or any of it's children show up in the box tree
+                        at all.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div style="display: none;">An item
+                            <div>
+                                A child
+                            </div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 id="contents" class="code">contents</h2>
+            <label for="contents-section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="contents-section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        This option makes it so that the element does not show up in the box tree.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div>
+                            Some text before
+                            <div style="display: contents;">
+                                <span>
+                                    A child
+                                </span>
+                            </div>
+                            Some text after
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+    </main>
+    <nav>
+        <a class="code tag" href="display-outside.html">display-outside</a>
+        <a class="code tag" href="display-inside.html">display-inside</a>
+        <a class="code tag" href="display-listitem.html">display-listitem</a>
+        <a class="code tag" href="display-box.html">display-box</a>
+        <a class="code tag" href="display-legacy.html">display-legacy</a>
+    </nav>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
