@@ -1,0 +1,406 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="code tag">Grid</h1>
+    </header>
+    <main>
+        <article>
+            <h2 class="code">Parent properties</h2>
+            <label for="section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        The way you activate grid layout is by having an element's display property set to <span
+                            class="code tag">grid</span>.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <div class="example-element-border" style="display: grid;">
+                            <div class="example-element">block 1</div>
+                            <div class="example-element">block 2</div>
+                            <span class="example-element">inline element 1</span>
+                            <span class="example-element">inline 2</span>
+                            <div class="example-element">block 5</div>
+                            <span class="example-element">inline 6</span>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+                <section>
+                    <p>
+                        <span class="code tag">grid-template-rows</span> and <span
+                            class="code tag">grid-template-columns</span> are used to configure the grid itself
+
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-trc {
+                                display: grid;
+                                grid-template-rows: [row1-start] 1fr [row1-end row2-start] 100px [row2-end];
+                                grid-template-columns: [before-christmas] 3fr [after-christmas before-new-year] 100px [after-new-year];
+                            }
+                        </style>
+                        <div class="example-element-border grid-trc">
+                            <div class="example-element">block 1</div>
+                            <div class="example-element">block 2</div>
+                            <span class="example-element">inline element 1</span>
+                            <span class="example-element" style="grid-row:row1-start / row1-end">inline 2</span>
+                            <div class="example-element">block 5</div>
+                            <span class="example-element" style="grid-row: 1 / span 2">inline 6</span>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="code tag">grid-template-areas</span> allows you to define areas in the grid where
+                        content can be placed
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-tas {
+                                grid-template-rows: 1fr 1fr 1fr;
+                                grid-template-columns: 1fr 2fr 2fr;
+                                grid-template-areas:
+                                    "block1 block1 block2"
+                                    "block1 block1 block2"
+                                    "block3 . block2"
+                            }
+                        </style>
+                        <div class="example-element-border grid-tas" style="display: grid;">
+                            <div class="example-element" style="grid-area: block1;">block 1</div>
+                            <div class="example-element" style="grid-area: block2;">block 2</div>
+                            <div class="example-element" style="grid-area: block3;">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="code tag">grid-template</span> is a shorthand for <span
+                            class="code tag">grit-template-rows</span>, <span
+                            class="code tag">grid-template-columns</span> and <span
+                            class="code tag">grid-template-areas</span>
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-t {
+                                grid-template:
+                                    [row1-start] "block1 block1 block2"1fr [row1-end] [row2-start] "block1 block1 block2"1fr [row2-end] [row3-start] "block3 . block2"1fr [row3-end] / 1fr 2fr 2fr;
+                            }
+                        </style>
+                        <div class="example-element-border grid-t" style="display: grid;">
+                            <div class="example-element" style="grid-area: block1;">block 1</div>
+                            <div class="example-element" style="grid-area: block2;">block 2</div>
+                            <div class="example-element" style="grid-area: block3;">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="code tag">row-gap</span> and <span class="code tag">column-gap</span> allows you to
+                        space out the cells in a grid
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-crg {
+                                grid-template:
+                                    [row1-start] "block1 block1 block2"1fr [row1-end]
+                                    [row2-start] "block1 block1 block2"1fr [row2-end] 
+                                    [row3-start] "block3 . block2"1fr [row3-end] /
+                                     1fr 2fr 2fr;
+                                row-gap: 10px;
+                                column-gap: 30px;
+                            }
+                        </style>
+                        <div class="example-element-border grid-crg" style="display: grid;">
+                            <div class="example-element" style="grid-area: block1;">block 1</div>
+                            <div class="example-element" style="grid-area: block2;">block 2</div>
+                            <div class="example-element" style="grid-area: block3;">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="code tag">gap</span> is a shorthand for <span class="code tag">row-gap</span> and
+                        <span class="code tag">column-gap</span>
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-gap {
+                                grid-template:
+                                    [row1-start] "block1 block1 block2"1fr [row1-end] [row2-start] "block1 block1 block2"1fr [row2-end] [row3-start] "block3 . block2"1fr [row3-end] / 1fr 2fr 2fr;
+                                gap: 10px 30px;
+                            }
+                        </style>
+                        <div class="example-element-border grid-gap" style="display: grid;">
+                            <div class="example-element" style="grid-area: block1;">block 1</div>
+                            <div class="example-element" style="grid-area: block2;">block 2</div>
+                            <div class="example-element" style="grid-area: block3;">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+                <section>
+                    And many more. Check them out in <a
+                        href="https://css-tricks.com/snippets/css/complete-guide-grid/">this guide</a>
+
+                    Short cheat list:
+
+                    <p>
+                        <span class="code tag">justify-items</span> - align elements horizontally in their cell : start,
+                        end, center,
+                        stretch
+                    </p>
+                    <p>
+                        <span class="code tag">align-items</span> - align elements vertically in their cell : start,
+                        end, center,
+                        stretch
+                    </p>
+                    <p>
+                        <span class="code tag">justify-content</span> - align the grid horizontally in it's parent :
+                        start, end, center,
+                        stretch, space-around, space-between, space-evenly
+                    </p>
+                    <p>
+                        <span class="code tag">align-content</span> - align the grid vertically in it's parent : start,
+                        end, center,
+                        stretch, space-around, space-between, space-evenly
+                    </p>
+                    <p>
+                        <span class="code tag">grid-auto-columns</span> / <span class="code tag">grid-auto-rows</span>
+                        specify the size of any auto generated columns / rows
+                    </p>
+                    <p>
+                        <span class="code tag">grid-auto-flow</span> defines how elements will be automatically placed
+                        in the grid (flex-direction) : row / column dense (fill in previous empty spaces)
+                    </p>
+                    <p>
+                        <span class="code tag">grid</span> shorthand for
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2 class="code">Child properties</h2>
+            <label for="section-toggle" class="section-toggle-label">Toggle section</label>
+            <input id="section-toggle" class="section-toggle" type="checkbox" checked>
+            <div class="toggleable-section">
+                <section>
+                    <p>
+                        <span class="code tag">grid-row-start</span>,
+                        <span class="code tag">grid-row-end</span>,
+                        <span class="code tag">grid-column-start</span> and
+                        <span class="code tag">grid-column-end</span> define where an element will be placed in the
+                        grid.
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-rcse {
+                                grid-template: [row1-start] 1fr [row1-end row2-start] 1fr [row2-end row3-start] 1fr [row3-end] / [col1-start] 1fr [col1-end col2-start] 1fr [col2-end];
+                            }
+
+                            .grid-rcse .block1 {
+                                grid-row-start: row1-start;
+                                grid-row-end: span row3-end;
+                                grid-column-start: col2-start;
+                                grid-column-end: col2-end;
+                            }
+
+                            .grid-rcse .block2 {
+                                grid-row-start: row1-start;
+                                grid-row-end: span 1;
+                                grid-column-start: col1-start;
+                                grid-column-end: col1-end;
+                            }
+
+                            .grid-rcse .block3 {
+                                grid-row-start: row3-start;
+                                grid-row-end: span 1;
+                                grid-column-start: col1-start;
+                                grid-column-end: col1-end;
+                            }
+                        </style>
+                        <div class="example-element-border grid-rcse" style="display: grid;">
+                            <div class="example-element block1">block 1</div>
+                            <div class="example-element block2">block 2</div>
+                            <div class="example-element block3">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+                <section>
+                    <p>
+                        <span class="code tag">grid-row</span>
+                        and
+                        <span class="code tag">grid-column</span> are shorthands for
+                        <span class="code tag">grid-row-start</span>,
+                        <span class="code tag">grid-row-end</span>,
+                        <span class="code tag">grid-column-start</span> and
+                        <span class="code tag">grid-column-end</span>
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-rc {
+                                grid-template: [row1-start] 1fr [row1-end row2-start] 1fr [row2-end row3-start] 1fr [row3-end] / [col1-start] 1fr [col1-end col2-start] 1fr [col2-end];
+                            }
+
+                            .grid-rc .block1 {
+                                grid-row: row1-start / span row3-end;
+                                grid-column: col2-start / col2-end;
+                            }
+
+                            .grid-rc .block2 {
+                                grid-row: row1-start / span 1;
+                                grid-column: col1-start / col1-end;
+                            }
+
+                            .grid-rc .block3 {
+                                grid-row: row3-start / span 1;
+                                grid-column: col1-start / col1-end;
+                            }
+                        </style>
+                        <div class="example-element-border grid-rc" style="display: grid;">
+                            <div class="example-element block1">block 1</div>
+                            <div class="example-element block2">block 2</div>
+                            <div class="example-element block3">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="code tag">grid-area</span> allows you to define the area an element will be placed
+                        in
+                    </p>
+                </section>
+                <section class="example-section">
+                    <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                    <div class="resizable example">
+                        <style>
+                            .grid-ta {
+                                grid-template-rows: 1fr 1fr 1fr;
+                                grid-template-columns: 1fr 2fr 2fr;
+                                grid-template-areas:
+                                    "block1 block1 block2"
+                                    "block1 block1 block2"
+                                    "block3 . block2"
+                            }
+                        </style>
+                        <div class="example-element-border grid-ta" style="display: grid;">
+                            <div class="example-element" style="grid-area: block1;">block 1</div>
+                            <div class="example-element" style="grid-area: block2;">block 2</div>
+                            <div class="example-element" style="grid-area: block3;">block 3</div>
+                        </div>
+                    </div>
+                    <textarea readonly class="example-code"></textarea>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h2>Example website</h2>
+
+            <section>
+                <style>
+                    .body {
+                        background-color: lavender;
+                        min-height: 700px;
+                        padding: 20px 100px;
+                        display: grid;
+                        grid-template: 
+                            "header header header" 
+                            "panel1 panel2 panel3"
+                            "panel4 panel5 ."
+                            "footer footer footer"
+                        ;
+                    }
+
+                    .panel {
+                        width: 250px;
+                        height: 250px;
+                        align-self: stretch;
+                        margin: 20px;
+                        background-color: lightskyblue;
+                    }
+
+                    .footer {
+                        background-color: lightgreen;
+                        height: 100px;
+                        grid-area: footer;
+                    }
+
+                    .header {
+                        background-color: lightpink;
+                        height: 200px;
+                        grid-area: header;
+                    }
+                </style>
+                <div class="resizable-x">
+                    <div class="body grid-example">
+                        <div class="header">
+
+                        </div>
+                        <div class="panel" style="grid-area: panel1;"></div>
+                        <div class="panel" style="grid-area: panel2;"></div>
+                        <div class="panel" style="grid-area: panel3;"></div>
+                        <div class="panel" style="grid-area: panel4;"></div>
+                        <div class="panel" style="grid-area: panel5;"></div>
+                        <div class="footer"></div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <nav>
+        <a class="code tag" href="display-outside.html">display-outside</a>
+        <a class="code tag" href="display-inside.html">display-inside</a>
+        <a class="code tag" href="display-listitem.html">display-listitem</a>
+        <a class="code tag" href="display-box.html">display-box</a>
+        <a class="code tag" href="display-legacy.html">display-legacy</a>
+    </nav>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
