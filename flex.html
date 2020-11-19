@@ -1,0 +1,480 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+</body>
+<header>
+    <h1 class="code tag">flex</h1>
+</header>
+<main>
+    <article>
+        <h2 class="code">Parent properties</h2>
+        <label for="section-toggle" class="section-toggle-label">Toggle section</label>
+        <input id="section-toggle" class="section-toggle" type="checkbox" checked>
+        <div class="toggleable-section">
+            <section>
+                <p>
+                    The way you activate flex layout is by having an element's display property set to <span class="code tag">flex</span>.
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-direction</span> changes the direction the elements flow in.
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p class="code">flex-direction: row</p>
+                    <div class="example-element-border" style="display: flex; flex-direction: row;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code">flex-direction: row-reverse</p>
+                    <div class="example-element-border" style="display: flex; flex-direction: row-reverse;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code">flex-direction: column</p>
+                    <div class="example-element-border" style="display: flex; flex-direction: column;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code">flex-direction: column-reverse</p>
+                    <div class="example-element-border" style="display: flex;; flex-direction: column-reverse">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-wrap</span> defines how the elements of the flow should wrap
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p class="code">flex-wrap: nowrap</p>
+                    <div class="example-element-border" style="display: flex; flex-wrap:nowrap">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code">flex-wrap: wrap</p>
+                    <div class="example-element-border" style="display: flex; flex-wrap:wrap">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code">flex-wrap: wrap-reverse</p>
+                    <div class="example-element-border" style="display: flex; flex-wrap:wrap-reverse">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-flow</span> is a shorthand for defining both <span class="code tag">flex-direction</span> and <span class="code tag">flex-wrap</span>
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex; flex-flow: column wrap-reverse; height: 200px;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">justify-content</span> defines how elements are aligned on the main axis
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p class="code">flex-start</p>
+                    <div class="example-element-border" style="display: flex; justify-content: flex-start;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    
+                    <p class="code">flex-end</p>
+                    <div class="example-element-border" style="display: flex; justify-content: flex-end;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    
+                    <p class="code">center</p>
+                    <div class="example-element-border" style="display: flex; justify-content: center;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    
+                    <p class="code">space-between</p>
+                    <div class="example-element-border" style="display: flex; justify-content: space-between;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    
+                    <p class="code">space-around</p>
+                    <div class="example-element-border" style="display: flex; justify-content: space-around;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    
+                    <p class="code">space-evenly</p>
+                    <div class="example-element-border" style="display: flex; justify-content: space-evenly;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>                    
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            
+            <section>
+                <p>
+                    <span class="code tag">align-items</span> defines how elements align vertically
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p class="code tag">flex-start</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items: flex-start;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">flex-end</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items: flex-end;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">center</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items: center;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">stretch</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items: stretch;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">baseline</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items: baseline;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element" style="padding: 30px;">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element" style="padding: 20px;">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section><section>
+                <p>
+                    <span class="code tag">align-content</span> defines how the flex container will fill in all of it's space
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p class="code tag">flex-start</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: flex-start;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                    
+                    <p class="code tag">flex-end</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: flex-end;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">center</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: center;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">stretch</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: stretch;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">space-between</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: space-between;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element" style="padding: 30px;">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element" style="padding: 20px;">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+
+                    <p class="code tag">space-around</p>
+                    <div class="example-element-border" style="display: flex; height: 300px; flex-wrap: wrap; align-content: space-around;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element" style="padding: 30px;">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element" style="padding: 20px;">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+        </div>
+    </article>
+    <article>
+        <h2 class="code">Child</h2>
+        <label for="section-toggle" class="section-toggle-label">Toggle section</label>
+        <input id="section-toggle" class="section-toggle" type="checkbox" checked>
+        <div class="toggleable-section">
+            <section>
+                <p>
+                    There are also properties to be set per child:
+                </p>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">order</span> allows you to define the order elements show up in, regardless of their order in the source HTML code
+                </p>
+                <p> default value is 0</p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <p>unordered</p>
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element">inline 2</span>
+                        <div class="example-element">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                    <p>ordered</p>
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element">block 1</div>
+                        <div class="example-element" style="order: 4;">block 2</div>
+                        <span class="example-element">inline element 1</span>
+                        <span class="example-element" style="order: 1;">inline 2</span>
+                        <div class="example-element" style="order: -1;">block 5</div>
+                        <span class="example-element">inline 6</span>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-grow</span> tells the browser how much an element can grow if it has room to.
+                </p>
+                <p> The units used define how many parts of the remaining space to use</p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex-grow: 1;">block 1</div>
+                        <div class="example-element" style="flex-grow: 1;">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                    <br>
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex-grow: 1;">block 1</div>
+                        <div class="example-element" style="flex-grow: 2;">block 2</div>
+                        <div class="example-element">block 3</div>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-shrink</span> tells the browser how much an element should shring when there is not enough space.
+                </p>
+                <p> The units used define how much it should shring proportionally to the rest</p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex-shrink: 3;">block element 1</div>
+                        <div class="example-element" style="flex-shrink: 3;">block element 2</div>
+                        <div class="example-element">block element 3</div>
+                    </div>
+                    <br>
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex-shrink: 1;">block element 1</div>
+                        <div class="example-element" style="flex-shrink: 2;">block element 2</div>
+                        <div class="example-element">block element 3</div>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex-basis</span> tells the browser the default width an element has before applying any stretching / shrinking.
+                </p>
+                <p> It can be a length of any unit or a keyword</p>
+                <p> auto: use the element's width</p>
+                <p> content: use the element's content width</p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex-basis: 100px;">block element 1</div>
+                        <div class="example-element" style="flex-basis: 200px;">block element 2</div>
+                        <div class="example-element" style="flex-basis: auto">block element 3</div>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">flex</span> allows you to set <span class="code tag">flex-grow</span>, <span class="code tag">flex-shrink</span> and <span class="code tag">flex-basis</span> all at once.
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex;">
+                        <div class="example-element" style="flex: 1 3 300px;">block element 1</div>
+                        <div class="example-element" style="flex: 10 0 100px;">block element 2</div>
+                        <div class="example-element" style="flex: 0 0 auto">block element 3</div>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+            <section>
+                <p>
+                    <span class="code tag">align-self</span> allows for individually setting the alignment of elements, regardless of the alignment the parent set
+                </p>
+            </section>
+            <section class="example-section">
+                <h5>Example<span class="tooltip" title="You can resize the box below">(?)</span>:</h5>
+                <div class="resizable example">
+                    <div class="example-element-border" style="display: flex; height: 300px; align-items:center">
+                        <div class="example-element" style="align-self: flex-start;">block element 1</div>
+                        <div class="example-element">block element 2</div>
+                        <div class="example-element">block element 3</div>
+                    </div>
+                </div>
+                <textarea readonly class="example-code"></textarea>
+            </section>
+        </div>
+    </article>
+</main>
+
+<nav>
+    <a class="code tag" href="display-outside.html">display-outside</a>
+    <a class="code tag" href="display-inside.html">display-inside</a>
+    <a class="code tag" href="display-listitem.html">display-listitem</a>
+    <a class="code tag" href="display-box.html">display-box</a>
+    <a class="code tag" href="display-legacy.html">display-legacy</a>
+</nav>
+
+</html>

@@ -136,7 +136,12 @@ span.tooltip{
     font-weight: bolder;
     background-color: rgba(231, 222, 248, 0.5);
     padding:10px;
+    margin: 2px;
     cursor: default;
+}
+
+.example-element-border {
+    border: 3px solid mediumpurple;
 }
 
 
