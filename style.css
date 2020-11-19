@@ -104,6 +104,11 @@ span.tooltip{
     overflow: auto;
 }
 
+.resizable-x{
+    resize: horizontal;
+    overflow: auto;
+}
+
 .example-section {
     display: grid;
     grid-template-rows: auto 1fr;
